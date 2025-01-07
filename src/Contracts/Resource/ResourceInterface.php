@@ -56,7 +56,7 @@ interface ResourceInterface
 
     /**
      * @param  array<mixed>  $data
-     * @return Collection<int, covariant self>
+     * @return Collection<int, ResourceInterface>
      */
     public static function castMany(array $data): Collection;
 
