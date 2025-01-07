@@ -23,5 +23,4 @@ RUN composer install --no-interaction --prefer-dist --no-progress
 # Set up environment for testing
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-# Run tests
-CMD ["composer", "test"]
+RUN echo "memory_limit = 1G" >> /usr/local/etc/php/conf.d/memory.ini
