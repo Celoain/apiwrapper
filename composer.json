@@ -1,0 +1,54 @@
+{
+  "name": "celoain/api-wrapper",
+  "version": "1.0.0",
+  "description": "A system for quickly developing PHP wrapper clients around remote APIs.",
+  "keywords": ["php", "remote", "api", "REST", "wrapper", "client"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christof Gundelach",
+      "email": "celoain@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "8.3.*",
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "require-dev": {
+    "larastan/larastan": "*",
+    "orchestra/testbench": "*",
+    "pestphp/pest": "*",
+    "pestphp/pest-plugin-laravel": "*",
+    "laravel/pint": "*"
+  },
+  "scripts" : {
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "lint": "vendor/bin/pint",
+    "lint-check": "vendor/bin/pint --test"
+  },
+  "autoload": {
+    "psr-4": {
+      "Celoain\\ApiWrapper\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra" : {
+    "laravel" : {
+      "providers" : [
+        "Celoain\\ApiWrapper\\ApiWrapperServiceProvider"
+     ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

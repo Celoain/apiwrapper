@@ -1,6 +1,6 @@
 <?php
 
-namespace Celoain\ApiWrapper\Tests\Helpers\Api;
+namespace Tests\Helpers\Api;
 
 use Celoain\ApiWrapper\Contracts\Api\ProcessorInterface;
 use Celoain\ApiWrapper\Contracts\Api\ResponseInterface;

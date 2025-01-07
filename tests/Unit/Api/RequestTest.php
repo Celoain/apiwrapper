@@ -5,9 +5,9 @@ use Celoain\ApiWrapper\Api\Request;
 use Celoain\ApiWrapper\Api\Route;
 use Celoain\ApiWrapper\Contracts\Api\RequestInterface;
 use Celoain\ApiWrapper\Enums\Api\HttpMethods;
-use Celoain\ApiWrapper\Tests\Helpers\Api\BasicProcessor;
-use Celoain\ApiWrapper\Tests\Helpers\Api\MockGuzzleClient;
-use Celoain\ApiWrapper\Tests\Helpers\Api\PostProcessor;
+use Tests\Helpers\Api\BasicProcessor;
+use Tests\Helpers\Api\MockGuzzleClient;
+use Tests\Helpers\Api\PostProcessor;
 
 it('can define and pull a route by name', function () {
     Route::get('requestRouteTest', 'requestRouteTest');
@@ -97,7 +97,7 @@ it('sends', function () {
 
     $endpoint = (new Endpoint(HttpMethods::GET, 'test'))
         ->setUrl('https://www.example.com')
-        ->setProcessors([BasicPreProcessor::class, PostProcessor::class]);
+        ->setProcessors([BasicProcessor::class, PostProcessor::class]);
 
     (new Request($endpoint, MockGuzzleClient::getClient()))->send();
 

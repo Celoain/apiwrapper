@@ -1,6 +1,6 @@
 <?php
 
-namespace Celoain\ApiWrapper\Tests\Helpers\Api;
+namespace Tests\Helpers\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
