@@ -48,6 +48,7 @@ class Route implements RouteInterface
         if (array_key_exists($name, static::$endpoints)) {
             return static::$endpoints[$name];
         }
+
         throw new EndpointNotDefinedException('Endpoint not found');
     }
 
