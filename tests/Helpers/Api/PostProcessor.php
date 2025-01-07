@@ -3,8 +3,8 @@
 namespace Tests\Helpers\Api;
 
 use Celoain\ApiWrapper\Contracts\Api\ProcessorInterface;
-use Celoain\ApiWrapper\Contracts\Api\ResponseInterface;
 use Celoain\ApiWrapper\Contracts\Api\RequestInterface;
+use Celoain\ApiWrapper\Contracts\Api\ResponseInterface;
 
 class PostProcessor implements ProcessorInterface
 {

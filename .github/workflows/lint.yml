@@ -7,7 +7,9 @@ on:
 jobs:
   lint-and-fix:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -32,4 +34,5 @@ jobs:
     - name: Commit linted files
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
+        commit_user_name: Lint Bot
         commit_message: "Fixes coding style"

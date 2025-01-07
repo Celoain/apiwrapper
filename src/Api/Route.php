@@ -26,7 +26,7 @@ class Route implements RouteInterface
     protected static array $endpoints = [];
 
     /**
-     * @param  array<string>  $processors
+     * @param  array<ProcessorInterface|array<ProcessorInterface>>  $processors
      */
     public static function group(string $baseUrl, array $processors = [], ?callable $callback = null): void
     {
@@ -48,6 +48,7 @@ class Route implements RouteInterface
         if (array_key_exists($name, static::$endpoints)) {
             return static::$endpoints[$name];
         }
+
         throw new EndpointNotDefinedException('Endpoint not found');
     }
 
@@ -98,7 +99,7 @@ class Route implements RouteInterface
     }
 
     /**
-     * @param  array<string>  $processors
+     * @param  array<ProcessorInterface|array<ProcessorInterface>>  $processors
      */
     protected static function push(string $baseUrl, array $processors): void
     {
@@ -125,7 +126,7 @@ class Route implements RouteInterface
     }
 
     /**
-     * @return array<ProcessorInterface>
+     * @return class-string<ProcessorInterface>[]
      */
     protected static function groupProcessors(): array
     {
