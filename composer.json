@@ -1,6 +1,5 @@
 {
   "name": "celoain/api-wrapper",
-  "version": "1.0.0",
   "description": "A system for quickly developing PHP wrapper clients around remote APIs.",
   "keywords": ["php", "remote", "api", "REST", "wrapper", "client"],
   "type": "library",
