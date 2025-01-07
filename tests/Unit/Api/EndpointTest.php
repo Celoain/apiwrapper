@@ -2,8 +2,8 @@
 
 use Celoain\ApiWrapper\Api\Endpoint;
 use Celoain\ApiWrapper\Enums\Api\HttpMethods;
-use Celoain\ApiWrapper\Tests\Helpers\Api\BasicProcessor;
-use Celoain\ApiWrapper\Tests\Helpers\Api\PostProcessor;
+use Tests\Helpers\Api\BasicProcessor;
+use Tests\Helpers\Api\PostProcessor;
 
 beforeEach(function () {
     $this->endpoint = new Endpoint(HttpMethods::GET, 'test');

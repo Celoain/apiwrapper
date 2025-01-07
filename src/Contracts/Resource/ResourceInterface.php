@@ -1,6 +1,6 @@
 <?php
 
-namespace Celoain\ApiWrapper\Interfaces\Resource;
+namespace Celoain\ApiWrapper\Contracts\Resource;
 
 use Celoain\ApiWrapper\Enums\Resource\CastTypes;
 use Illuminate\Support\Collection;
@@ -41,7 +41,7 @@ interface ResourceInterface
 
     public function getAttributeCastType(string $key): CastTypes|string|null;
 
-    public function toJson(): string;
+    public function toJson(): string|false;
 
     public static function fromJson(string $data): ResourceInterface;
 
@@ -56,7 +56,7 @@ interface ResourceInterface
 
     /**
      * @param  array<mixed>  $data
-     * @return Collection<int, covariant self>
+     * @return Collection<int, ResourceInterface>
      */
     public static function castMany(array $data): Collection;
 
