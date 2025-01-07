@@ -4,6 +4,7 @@ namespace Celoain\ApiWrapper\Contracts\Resource;
 
 use Celoain\ApiWrapper\Enums\Resource\CastTypes;
 use Illuminate\Support\Collection;
+use phpDocumentor\Reflection\DocBlock\Tags\TemplateCovariant;
 
 interface ResourceInterface
 {
@@ -56,6 +57,7 @@ interface ResourceInterface
 
     /**
      * @param  array<mixed>  $data
+     * @return Collection<int, ResourceInterface>
      */
     public static function castMany(array $data): Collection;
 
