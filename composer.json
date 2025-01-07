@@ -22,7 +22,7 @@
     "laravel/pint": "*"
   },
   "scripts" : {
-    "analyse": "vendor/bin/phpstan analyse src",
+    "analyse": "vendor/bin/phpstan analyse --level=5 .",
     "test": "vendor/bin/pest",
     "test-coverage": "vendor/bin/pest --coverage",
     "lint": "vendor/bin/pint",
