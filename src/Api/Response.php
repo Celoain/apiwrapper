@@ -84,7 +84,7 @@ class Response implements ApiResponseInterface
         return $this->response->getStatusCode();
     }
 
-    public function withStatus(int|string $code, string $reasonPhrase = ''): self
+    public function withStatus(int $code, string $reasonPhrase = ''): self
     {
         return new self($this->response->withStatus($code, $reasonPhrase));
     }

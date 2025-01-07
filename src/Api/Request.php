@@ -20,7 +20,7 @@ class Request implements RequestInterface
     protected array $pathParams = [];
 
     /**
-     * @var array<array<mixed, mixed>|string>
+     * @var array<array<mixed>|string>
      */
     protected array $options = [];
 

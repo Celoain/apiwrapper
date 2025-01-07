@@ -26,7 +26,7 @@ class Route implements RouteInterface
     protected static array $endpoints = [];
 
     /**
-     * @param  array<string>  $processors
+     * @param  array<ProcessorInterface|array<ProcessorInterface>>  $processors
      */
     public static function group(string $baseUrl, array $processors = [], ?callable $callback = null): void
     {
@@ -99,7 +99,7 @@ class Route implements RouteInterface
     }
 
     /**
-     * @param  array<string>  $processors
+     * @param  array<ProcessorInterface|array<ProcessorInterface>>  $processors
      */
     protected static function push(string $baseUrl, array $processors): void
     {

@@ -145,6 +145,11 @@ abstract class AbstractResource implements ResourceInterface
         return null;
     }
 
+    /**
+     * @param  class-string|CastTypes  $type
+     *
+     * @return mixed
+     */
     protected function castAs(mixed $value, string|CastTypes $type): mixed
     {
         return match ($type) {
@@ -159,7 +164,7 @@ abstract class AbstractResource implements ResourceInterface
         };
     }
 
-    public function toJson(): string
+    public function toJson(): string|false
     {
         return json_encode($this->toArray());
     }

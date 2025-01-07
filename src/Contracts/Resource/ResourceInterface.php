@@ -42,7 +42,7 @@ interface ResourceInterface
 
     public function getAttributeCastType(string $key): CastTypes|string|null;
 
-    public function toJson(): string;
+    public function toJson(): string|false;
 
     public static function fromJson(string $data): ResourceInterface;
 

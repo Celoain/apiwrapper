@@ -44,7 +44,7 @@ interface ResponseInterface
 
     public function getStatusCode(): int;
 
-    public function withStatus(string|int $code, string $reasonPhrase = ''): self;
+    public function withStatus(int $code, string $reasonPhrase = ''): self;
 
     public function getReasonPhrase(): string;
 }
