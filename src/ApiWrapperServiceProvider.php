@@ -25,5 +25,4 @@ class ApiWrapperServiceProvider extends ServiceProvider
     {
         return ['api-wrapper'];
     }
-
 }
