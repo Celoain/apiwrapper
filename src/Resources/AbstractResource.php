@@ -3,8 +3,8 @@
 namespace Celoain\ApiWrapper\Resources;
 
 use Carbon\Carbon;
-use Celoain\ApiWrapper\Enums\Resource\CastTypes;
 use Celoain\ApiWrapper\Contracts\Resource\ResourceInterface;
+use Celoain\ApiWrapper\Enums\Resource\CastTypes;
 use Illuminate\Support\Collection;
 
 abstract class AbstractResource implements ResourceInterface

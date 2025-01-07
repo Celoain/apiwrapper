@@ -9,7 +9,7 @@ interface EndpointInterface
     public function setUrl(string $url): self;
 
     /**
-     * @param  class-string<ProcessorInterface>[] $processors
+     * @param  class-string<ProcessorInterface>[]  $processors
      */
     public function setProcessors(array $processors): self;
 
