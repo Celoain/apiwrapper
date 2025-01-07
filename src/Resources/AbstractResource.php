@@ -147,8 +147,6 @@ abstract class AbstractResource implements ResourceInterface
 
     /**
      * @param  class-string|CastTypes  $type
-     *
-     * @return mixed
      */
     protected function castAs(mixed $value, string|CastTypes $type): mixed
     {
