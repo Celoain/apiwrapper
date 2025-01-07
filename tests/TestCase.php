@@ -9,4 +9,3 @@ abstract class TestCase extends BaseTestCase
 {
     public RequestInterface $request;
 }
-
