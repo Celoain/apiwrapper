@@ -28,7 +28,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * @param  class-string<ProcessorInterface>[] $processors
+     * @param  class-string<ProcessorInterface>[]  $processors
      * @return $this
      */
     public function setProcessors(array $processors): self
