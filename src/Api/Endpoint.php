@@ -11,7 +11,7 @@ class Endpoint implements EndpointInterface
     protected string $url = '';
 
     /**
-     * @var ProcessorInterface[]
+     * @var class-string<ProcessorInterface>[]
      */
     protected array $processors = [];
 
@@ -28,7 +28,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * @param  ProcessorInterface[]  $processors
+     * @param  class-string<ProcessorInterface>[] $processors
      * @return $this
      */
     public function setProcessors(array $processors): self
@@ -53,7 +53,7 @@ class Endpoint implements EndpointInterface
     }
 
     /**
-     * @return ProcessorInterface[]
+     * @return class-string<ProcessorInterface>[]
      */
     public function getProcessors(): array
     {

@@ -126,7 +126,7 @@ class Route implements RouteInterface
     }
 
     /**
-     * @return array<ProcessorInterface>
+     * @return class-string<ProcessorInterface>[]
      */
     protected static function groupProcessors(): array
     {
