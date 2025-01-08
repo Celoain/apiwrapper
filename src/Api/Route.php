@@ -26,7 +26,7 @@ class Route implements RouteInterface
     protected static array $endpoints = [];
 
     /**
-     * @param  array<ProcessorInterface|array<ProcessorInterface>>  $processors
+     * @param  array<class-string ProcessorInterface|array<class-string ProcessorInterface>>  $processors
      */
     public static function group(string $baseUrl, array $processors = [], ?callable $callback = null): void
     {
