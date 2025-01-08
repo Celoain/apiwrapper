@@ -3,7 +3,7 @@
 namespace Celoain\ApiWrapper\Resources\Traits;
 
 use Celoain\ApiWrapper\Exceptions\EndpointNotDefinedException;
-use Celoain\ApiWrapper\Interfaces\Resource\ResourceInterface;
+use Celoain\ApiWrapper\Contracts\Resource\ResourceInterface;
 use GuzzleHttp\Client;
 
 trait Update

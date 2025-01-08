@@ -88,4 +88,12 @@ describe('testing Response features', function () {
 
     });
 
+    it('create with a body', function () {
+        $response = $this->response->withBody($this->response->getBody());
+
+        expect($response->getBody())
+            ->toBe($this->response->getBody());
+
+    });
+
 });
