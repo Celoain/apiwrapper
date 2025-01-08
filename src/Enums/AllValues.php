@@ -3,7 +3,7 @@
 namespace Celoain\ApiWrapper\Enums;
 
 /**
- * @method cases
+ * @method cases()
  */
 trait AllValues
 {
