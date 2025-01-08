@@ -3,6 +3,7 @@
 use Celoain\ApiWrapper\Api\Route;
 use Celoain\ApiWrapper\Contracts\Api\EndpointInterface;
 use Celoain\ApiWrapper\Enums\Api\HttpMethods;
+use Celoain\ApiWrapper\Exceptions\EndpointNotDefinedException;
 use Tests\Helpers\Api\BasicProcessor;
 
 test('basic Endpoint', function () {
@@ -123,4 +124,10 @@ test('Grouped Endpoints', function () {
         ->toBeInstanceOf(EndpointInterface::class)
         ->and($basicEndpoint->getProcessors())
         ->toHaveCount(0);
+});
+
+it('throws an exception if no route is defined', function () {
+    expect(function () {
+        Route::find('test-not-found');
+    })->toThrow(EndpointNotDefinedException::class);
 });

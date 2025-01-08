@@ -38,3 +38,4 @@ RUN composer install --no-interaction --prefer-dist --no-progress
 
 # Set up environment for testing
 ENV COMPOSER_ALLOW_SUPERUSER=1
+ENTRYPOINT ["top", "-b"]

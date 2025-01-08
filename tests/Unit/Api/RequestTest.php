@@ -23,7 +23,7 @@ it('can define and pull a route by name', function () {
 describe('testing Route features', function () {
 
     beforeEach(function () {
-        $this->request = new Request(new Endpoint(HttpMethods::GET, 'test'));
+        $this->request = new Request(new Endpoint(HttpMethods::GET, 'test/{test}'));
     });
 
     test('fluent builders', function () {
@@ -91,6 +91,15 @@ describe('testing Route features', function () {
             ->and($extraOptions['option'])
             ->toBe($options['option']);
     });
+
+    it('appends path params to the url', function () {
+        $pathParams = ['test' => 'value'];
+        $this->request->pathParams($pathParams);
+
+        expect($this->request->getUrl())
+            ->toBe('test/value');
+    });
+
 });
 
 it('sends', function () {
