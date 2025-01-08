@@ -23,7 +23,7 @@ jobs:
         php-version: ${{ matrix.php-version }}
         extensions: mbstring, intl, gd, xml, dom, json
         coverage: xdebug
-        tools: composer:v2, pest
+        tools: composer:v2
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -36,7 +36,7 @@ jobs:
     - name: Cache Composer dependencies
       uses: actions/cache@v3
       with:
-        key: composer-cache-${{ hashFiles('**/composer.lock') }}
+        key: composer-cache-${{ hashFiles('**/composer.json') }}
         path: ${{ steps.composer-cache-dir.outputs.dir }}
         restore-keys: composer-cache-
 
