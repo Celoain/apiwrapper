@@ -12,11 +12,13 @@ trait Base
 {
     public function getRoutePrefix(): string
     {
+        if ($this->routePrefix) {
+            return $this->routePrefix;
+        }
         $class = explode('\\', static::class);
         $resource = (new EnglishInflector)->pluralize(array_pop($class))[0];
 
-        return $this->allRoute ??
-            u($resource)->camel();
+        return u($resource)->camel();
     }
 
     /**

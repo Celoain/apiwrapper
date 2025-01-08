@@ -12,7 +12,8 @@
   ],
   "require": {
     "php": "8.3.*",
-    "guzzlehttp/guzzle": "^7.5"
+    "guzzlehttp/guzzle": "^7.5",
+    "carbonphp/carbon-doctrine-types": "^3.2"
   },
   "require-dev": {
     "larastan/larastan": "*",

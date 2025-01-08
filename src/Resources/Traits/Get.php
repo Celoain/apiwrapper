@@ -2,8 +2,8 @@
 
 namespace Celoain\ApiWrapper\Resources\Traits;
 
+use Celoain\ApiWrapper\Contracts\Resource\ResourceInterface;
 use Celoain\ApiWrapper\Exceptions\EndpointNotDefinedException;
-use Celoain\ApiWrapper\Interfaces\Resource\ResourceInterface;
 use GuzzleHttp\Client;
 
 trait Get

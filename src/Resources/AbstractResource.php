@@ -36,7 +36,9 @@ abstract class AbstractResource implements ResourceInterface
 
     protected ?string $updateRoute = null;
 
-    protected ?string $routeHandler = null;
+    protected ?string $requestHandler = null;
+
+    protected ?string $routePrefix = null;
 
     public function __construct(array $data = [], bool $exists = false)
     {
@@ -150,14 +152,18 @@ abstract class AbstractResource implements ResourceInterface
      */
     protected function castAs(mixed $value, string|CastTypes $type): mixed
     {
+        if ($type instanceof CastTypes) {
+            $type = $type->value;
+        }
+
         return match ($type) {
-            CastTypes::BOOLEAN => (bool) $value,
-            CastTypes::COLLECTION => new Collection($value),
-            CastTypes::DATE => $this->castAsDate($value),
-            CastTypes::DATETIME => $this->castAsDateTime($value),
-            CastTypes::FLOAT => (float) $value,
-            CastTypes::INTEGER => (int) $value,
-            CastTypes::STRING => (string) $value,
+            CastTypes::BOOLEAN->value => (bool) $value,
+            CastTypes::COLLECTION->value => new Collection($value),
+            CastTypes::DATE->value => $this->castAsDate($value),
+            CastTypes::DATETIME->value => $this->castAsDateTime($value),
+            CastTypes::FLOAT->value => (float) $value,
+            CastTypes::INTEGER->value => (int) $value,
+            CastTypes::STRING->value => (string) $value,
             default => $this->castAsClass($value, $type),
         };
     }
@@ -199,7 +205,15 @@ abstract class AbstractResource implements ResourceInterface
         $array = [];
 
         foreach ($this->attributes as $key => $value) {
-            if (is_object($value) && method_exists($value, 'toArray')) {
+            if ($value instanceof Collection) {
+                $collectionValues = [];
+                foreach ($value as $collectionValue) {
+                    $collectionValues[] = $collectionValue->toArray();
+                }
+                $value = $collectionValues;
+            } elseif (
+                is_object($value) && method_exists($value, 'toArray')
+            ) {
                 $value = $value->toArray();
             }
 
